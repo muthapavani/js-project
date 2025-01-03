@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./title.png">
+    <title>Water remainder</title>
+    <style>
+      body{
+          background-image: url("./water.avif");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+       
+      .container{
+         background-image: url("./Water_drop_001.jpg");
+         background-size: cover;
+         background-position: center;
+         border: 1px solid gray ;
+         height:470px;
+         width:400px;
+         border-radius:10px;
+         text-align: center;
+      }  
+      form{
+         width:360px;
+         height:430px;
+         background-color:rgba(239, 248, 252, 0.356);
+         margin:5%;
+         border-radius:10px;
+         column-gap: 40px;
+         display: flex;
+         flex-direction: column;
+        
+      }
+      input{
+         height:30px;
+         width:220px;
+         background-color:#e5ebeec0;
+         border-radius: 20px;
+         border: 2px solid rgb(116, 110, 110);
+         margin-top: 4%;
+      }
+      .p,label{
+         color:rgb(48, 12, 189);
+         font-size: 20px;
+         
+      }
+      h1{
+         font-size: 50px;
+         color: rgb(6, 35, 90);
+         text-align: center;
+      }
+      #btn{
+         border: 0px ;
+         background-color: blue;
+         width:40%;
+         height:7%;
+         border-radius: 20px;
+         margin-left: auto;
+         margin-right: auto;
+         color: white;
+      }
+      .a{
+         color: red;
+        font-size: 20px;
+      }
+
+
+      @media (min-width:300px) and (max-width:576px){
+        .container{
+            height: 450px;
+            width:320px
+        }
+        form{
+            height: 420px;
+            width:290px;
+        }
+        h1{
+         font-size: 35px;
+        }
+        input{
+            margin-top:5%;
+            width:170px;
+            height:20px;
+        }
+        #btn{
+            width:60px;
+            height:30px;
+            padding:10px;
+            
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <div class="container">
+    <form>
+
+        <label for="fname">First name : &nbsp;
+        <input type="name" name="fname"  id="fname" placeholder="first name">
+      </label> 
+        <label for="lname">Last name:&nbsp;&nbsp; 
+        <input type="name" name="lname" id="lname" placeholder="last name">
+      </label> 
+        <label for="email">Email id : &nbsp;&nbsp; &nbsp;
+        <input type="email" name="useremail" id="email" placeholder="email " >
+      </label>
+        <label for="password">Password :&nbsp; &nbsp;
+        <input type="password" name="password" id="password" placeholder="password">
+        </label>
+        <label for="user">User name : &nbsp;
+        <input type="text" name="username" id="user" placeholder="user name" >
+      </label>
+      <br>
+        <button type="submit" id="btn"> Submit</button>
+        <p class="a"> </p>
+        <p class="p"> You already have an account please:<a style="text-decoration: none;" href="./login.html"> LOGIN </a> </p>
+    </form> 
+   </div>
+   
+    <script>
+         let form =document.getElementsByTagName("form")[0]
+        let obj={}
+        form.addEventListener("submit",function(e){
+        var fn = document.getElementsByName("fname")[0].value   
+        var ln = document.getElementsByName("lname")[0].value
+        var em = document.getElementsByName("useremail")[0].value
+        var pas = document.getElementsByName("password")[0].value
+        var un= document.getElementsByName("username")[0].value
+
+      async function post_dat(){
+         
+         let emr= /^[A-z 0-9.*@#$%^&*]+@[A-z 0-9]+.[A-z]{2,}$/gi
+        let passr=/^(?=.*[A-z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?]).{8,}$/gi
+        let  unr=/[A-z 0-9 .*#$%^&*]/gi
+        e.preventDefault()
+
+        if (emr.test(em)&&passr.test(pas)&&unr.test(un)&&fn==fn&&ln==ln){
+         obj.useremail=em
+         obj.password=pas
+         obj.username=un
+         obj.fname=fn
+         obj.lname=ln
+        
+         let res= await fetch("http://localhost:3000/details ")
+         let data= await res.json() 
+         data.forEach( async element => {
+         if(element.username==un&&element.useremail===em){
+          let ele=document.getElementsByClassName("a")[0]
+            ele.innerText="This Email or username already exist"
+              }
+           else{ 
+         let res=  await fetch("  http://localhost:3000/details ",{
+           method:"POST",
+           headers:{"content-type":"application/json"},
+           body:JSON.stringify(obj)
+          
+      })
+        let data= await res.json()
+         window.location.href="./second.html"
+           } })
+        } 
+        
+         else{
+            let ele=document.getElementsByClassName("a")[0]
+            ele.innerText="enter valid email or password"
+         }  
+     }
+        post_dat()
+       
+        })
+        </script>
+    
+</body>
+</html>

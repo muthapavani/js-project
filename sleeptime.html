@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./title.png">
+    <title>Water remainder</title>
+    <style>
+        body{
+            background-image: url("./background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        h1{
+            color:blue;
+            text-align: center;
+            font-size: 50px;
+        }
+        h3{
+            color: blueviolet;
+            font-size: 25px;
+            text-align: center;
+        }
+        .btn{
+            background-color: rgb(20, 175, 226);
+            border:0px ;
+            height:40px;
+            width:40px;;
+            border-radius:8px;
+            color:white;
+            font-weight:bold;
+            font-size:15px;
+        }
+        .middle{
+            display:flex;
+            justify-content: center;
+            gap:20px
+        }
+        span{
+            font-size: 30px;
+            color: rgb(6, 102, 70);
+        }
+        .top{
+            display: flex;
+            justify-content: space-around;
+
+        }
+        h2{
+            font-size: 30px;
+            color:rgb(3, 63, 63);
+            text-align: center;
+        }
+        .btn1{
+         background-color: rgb(20, 175, 226);
+         border:0px ;
+         height:40px;
+         width:80px;
+         border-radius:8px;
+         font-size:15px;
+         color:white;
+         font-weight:bold
+         }
+       
+         input{
+            width: 100%;
+            height: 10%;
+            border-radius: 20px;
+         }
+         #btn{
+           background-color: rgb(20, 175, 226);
+           border:0px ;
+           height:40px;
+           width:80px;
+           border-radius:8px;
+           font-size:15px;
+            color:white;
+            font-weight:bold
+         }
+        .btn:hover{
+             background-color: blue;
+         }
+         #btn:hover{
+            background-color: blue;
+         }
+         .bottom{
+            display: flex;
+            justify-content: center;
+         }
+
+
+
+         @media (min-width:300px) and (max-width:567px){
+            h1{
+            color:blue;
+            text-align: center;
+            font-size: 40px;
+        }
+        h3{
+            font-size: 20px;
+
+         }
+
+         
+         }
+    </style>
+</head>
+<body>
+    <h1>SLEEP TIME</h1>
+    <h3>Bed time to Wake-up time</h3>
+    <div class="top">
+    <img src="./sleeping.jpg" height="200px" width="200px">
+    <div>
+        <h2> Bed  Time </h2>
+        <input type="time"   id="bed" placeholder="Time" required>
+    </div>
+</div>
+<br>
+   
+    <h3> how many hours do you sleep</h3>
+    <div class="middle">
+    <button  class="btn" onclick="decreases()">&lt;</button>
+    <span class="sleeptime"> 8 </span><span>hr</span>
+    <button class="btn" onclick="increases()">&gt;</button>
+    </div>
+    <br>
+    <br>
+    <div class="top">
+    <div>
+        <h2> Wake-up  Time </h2>
+        <input type="time" id="wake"  placeholder="Time" required>
+    </div>
+    <img src="./wakeup.jpeg" height="200px" width="200px">
+    </div>
+    <br>
+    <div class="bottom">
+    <button type="submit" id="btn" onclick="main_page()">Next</button>
+    </div>
+    <script src="./goal.js" defer>
+       
+        
+    </script>
+    
+</body>
+</html>

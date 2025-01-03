@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    }
+  ],
+  "details": [
+    {
+      "fname": "Mutha",
+      "lname": "Pavani",
+      "useremail": "muttapavani9@gmail.com",
+      "password": "P@vani38",
+      "username": "pavanimahi",
+      "id": 1
+    },
+    {
+      "useremail": "pavanimutha.38@gmail.com",
+      "password": "P@vani38",
+      "username": "pavani123",
+      "fname": "Mutha",
+      "lname": "Pavani",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./title.png">
+    <title>Water remainder</title>
+    <link rel="stylesheet" href="./gender.css">
+
+</head>
+<body>
+    <h1>SELECT YOUR GENDER</h1>
+    <br>
+    <br>
+    <div class="divname">
+    <div> <label for="name">Name:</label>
+    <input type="name" id="name" placeholder="Enter Your Name" required>
+    </div>
+    <button type="submit" id="btn"> submit</button>
+    </div>
+    <div class="main">
+        <div id="div">
+    <div class="con">
+       <img src="./boystand.jpg" height="250px" width="200px">
+    </div>
+    <p>Male</p>
+        </div>
+        <div id="divs">
+    <div class="cons">
+        <img src="./girlstand.jpg"height="200px" width="200px">
+    </div>
+    <p>Female</p>
+    </div>
+    </div>
+    <script>
+        let btn=document.getElementById("btn")
+        btn.addEventListener("click" ,function(){
+        var name=document.getElementById("name").value
+        sessionStorage.setItem("name",name)
+        })
+        
+        let div=document.getElementById("div")
+        let divs=document.getElementById("divs")
+
+      div.addEventListener("click",function() {
+          let img=document.getElementsByTagName("img")[0]
+          img.style.opacity="0.5"
+          window.location.assign("./weight.html")
+          let p=document.getElementsByTagName("p")[0]
+          p.style.opacity="0.5"
+          sessionStorage.setItem("gender","Male")
+
+        });
+
+        divs.addEventListener("click",function() {
+          let img=document.getElementsByTagName("img")[1]
+          img.style.opacity="0.5"
+          window.location.assign("./weight.html")
+           let p=document.getElementsByTagName("p")[1]
+          p.style.opacity="0.5"
+          sessionStorage.setItem("gender","FeMale")
+        });
+        
+    </script>
+    
+</body>
+</html>

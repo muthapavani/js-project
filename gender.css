@@ -1,0 +1,104 @@
+body{
+    background-image: url("./background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    margin-top: 5%;
+    
+}
+.con{
+    border-radius: 50%;
+    border: 2px solid white;
+    height:200px;
+    width:200px;
+    overflow: hidden;
+   
+}
+.cons{
+    border-radius: 50%;
+    border: 2px solid white;
+    height:200px;
+    width:200px;
+    overflow: hidden;
+}
+img{
+    margin-left:auto;
+    margin-right:auto;
+}
+h1{
+    text-align: center;
+    color:blue
+}
+p{
+    font-size:25px ;
+    margin-left:31%;
+}
+.divname{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+label{
+    font-size:20px;
+    color:blue;
+   margin-left:38%;
+   margin-right: auto;
+
+}
+input{
+    height:30px;
+    border-radius: 20px;
+    border-width:0px 0px 2px 0px ;
+    width: 200px;
+    margin-left:auto;
+    margin-right: auto;
+  
+}
+#btn{
+    border: 0px ;
+    background-color: rgb(10, 193, 206);
+    width:100px;
+    height:30px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+ }
+ #btn:hover{
+    background-color: blue;
+ }
+
+ @media (min-width:300px) and (max-width:576px){
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin-top: 5%;
+    
+}
+label{
+     margin-left: 25%;
+}
+input{
+    width:40%;
+   
+}
+ }
+ @media (min-width:576px) and (max-width:800px){
+    label{
+        margin-left: 30%;
+   }
+ }
+
+

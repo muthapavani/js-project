@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./title.png">
+    <title>Water remainder</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h1{
+            text-align: center;
+            color: cadetblue;
+        }
+        h3{
+            display: flex;
+            justify-content: space-between;
+            color:darkslategray;
+        }
+        span{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+     <h1> Personal Information</h1>
+     <hr>
+    <h3> Intake goal<span id="igoal"></span></h3>
+    <br>
+    <h3> name       <span id="name"> </span></h3>
+    <br>
+    <h3>  Gender   <span id="gender"> </span></h3>
+    <br>
+    <h3>  weight   <span id="weight"> </span></h3>
+    <br>
+    <h3> Wake-up time <span id="wakeup"> </span></h3>
+    <br>
+    <h3> Bedtime <span id="bedtime"> </span></h3>
+    <br>
+    <h3> sleeptime <span id="sleep"> </span></h3>
+
+    <script > 
+        let goal=sessionStorage.getItem("customgoal")
+        const igoal=document.getElementById("igoal")
+        igoal.innerText=goal
+        
+
+        let name=sessionStorage.getItem("name")
+        const names=document.getElementById("name")
+         names.innerText=name
+
+         let gender=sessionStorage.getItem("gender")
+        const gend=document.getElementById("gender")
+         gend.innerText=gender
+
+         let weight=sessionStorage.getItem("weight")
+        const weights=document.getElementById("weight")
+         weights.innerText=weight
+
+         let wake=sessionStorage.getItem("wake")
+        const wakeup=document.getElementById("wakeup")
+         wakeup.innerText=wake
+  
+
+         let bed=sessionStorage.getItem("bed")
+        const bedtime=document.getElementById("bedtime")
+         bedtime.innerText=bed
+    
+
+         let sleeps=sessionStorage.getItem("sleep")
+        const sleeping=document.getElementById("sleep")
+         sleeping.innerText=`${sleeps}h`
+    </script>
+</body>
+</html>

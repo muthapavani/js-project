@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./title.png">
+    <title>Water remainder</title>
+    <style>
+
+        *{
+           box-sizing: border-box; 
+        }
+        body{
+        background-image: url("./mainimage.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "Montserrat", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:40px;
+        }
+
+        h1{
+            color:blue;
+            margin-top:10%;
+        }
+
+        .hov{
+            background-image: url("./bglass.jpg");
+            background-size: cover;
+            background-position: center;
+            background-color: aliceblue; 
+            height:350px;
+            width:300px;
+            border-radius: 20px;
+            position: absolute; 
+            left:0;
+            right:0;
+            top:25%;
+            margin-inline: auto;
+            color:blue;
+            z-index:10;
+           }
+
+        h2{
+            margin-top:40px;
+            text-align: center;
+            font-size:30px;
+        }
+
+        .round{
+            border-radius: 50%;
+            height: 150px ;
+            width:150px;
+            background-color:hwb(208 13% 25% / 0.658);
+            margin-inline:auto;
+        }
+
+        .round .text{
+            text-align: center;
+            padding-top: 35%;
+            
+        }
+
+        nav{
+           background-color: rgb(96, 166, 231);
+           position:fixed;
+           top:0;
+           left:0;
+           height: 8vh;
+           width: 100%;
+           display: flex;
+           justify-content: space-between;
+           z-index: 10;
+        }
+
+        a{
+            text-decoration: none;
+            color: azure;
+            font-size: 20px;
+            margin-top:10px
+        }
+
+       .drop{
+            height:350px;
+            width:250px;
+            margin:auto;
+            box-shadow: 0 12px 15px 0  rbga(0,0,0,0.44);
+            border-radius: 3% 3% 8% 8%;
+            border-top: 0px;
+            border-style: solid;
+            border-color: darkblue;
+            background-color: aliceblue;
+            color:  #144fc6;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            
+       }
+      
+
+       .drop.drop-small{
+            height: 95px;
+            width:95px;
+            border-radius:0% 50% 50% 50%;
+            background-color: 255,255,255,0.9;
+            border:2px solid darkblue;
+            cursor:pointer;
+            display:flex ;
+            align-items: center;
+            transform: rotate(45deg);
+            justify-content: center;
+            transition:0.3s ease;
+            text-align: center;
+            margin: 5px;
+            font-size: 14px;
+            font-weight: bold;
+       }
+
+       small{
+            font-size: 20px;
+            color:rgb(9, 75, 133);
+            text-shadow: 2px 2px 5px gray;
+            display: inline-block;
+            transform: rotate(-45deg);
+            text-align: center;
+            padding:20%;
+       }
+
+       .remained small{
+            padding-left: 15%;
+            padding-top:60%;
+            font-size: 20px;
+       }
+
+       .drop.drop-small.full{
+            background-color:#89E1F9 ; 
+            color: white;
+       }
+
+       .drops{
+            display: flex;
+            flex-wrap:wrap;
+            align-items: center;
+            justify-content:space-around;
+            row-gap: 20px;
+            width:35%;
+       }
+
+       .remained{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex: 1;
+            transition: 0.3s ease;
+         
+        }
+
+       .remained span{
+           font-size: 20px;
+           font-weight: bold;
+       }
+
+       .percentage{
+           background-color:rgb(106, 221, 236); 
+           display: flex;
+           align-items:center;
+           justify-content: center;
+           font-weight: bold;
+           font-size: 30px;
+           height: 0;
+           transition:0.3s ease;
+           width:100%;
+       }
+
+       .text{
+        text-align: center;
+        margin: 0 0 5px;
+        color: blue;
+        font-size: 30px;
+        font-weight: bold;
+       }
+
+       .hover{
+            background-image: url("./compl.avif");
+            background-position: center;
+            background-size: cover;
+            background-color: rgb(243, 240, 255); 
+            height:350px;
+            width:350px;
+            border-radius: 20px;
+            position: absolute; 
+            left:0;
+            right:0;
+            top:25%;
+            margin-inline: auto;
+            color:rgb(6, 8, 107);
+            z-index:10;
+            display:none;
+           }
+
+        .h1{
+            text-align: center;
+            font-size:40px;
+            margin-top: 25%;
+        }
+        h2{
+           
+            text-align: center;
+            font-size:30px;
+        }
+        
+        .setgoal{
+            background-color: aliceblue; 
+            height:300px;
+            width:300px;
+            border-radius: 20px;
+            position: absolute; 
+            left:0;
+            right:0;
+            top:30%;
+            margin-inline: auto;
+            color:blue;
+            z-index:11;
+            display: flex;
+            flex-direction: column;
+            gap:15px;
+            visibility: hidden;
+            
+           }
+          .p{
+            text-align: center;
+           
+          }
+          h3{
+            text-align: center;
+            font-size: 25px;
+          }
+          input{
+              width:50%;
+              height: 30px;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+              border-radius: 20px;
+          }
+          button{
+              width:50%;
+              height: 30px;
+              margin-left: auto;
+              margin-right: auto;
+              border-radius: 20px;
+              color: white;
+              font-size: 15px;
+              background-color: #144fc6;
+          }
+          .a{
+            color: azure;
+            font-size: 20px;
+            margin-top:10px
+          }
+          .alarm{
+            background-color: aliceblue; 
+            height:400px;
+            width:300px;
+            border-radius: 20px;
+            position: absolute; 
+            left:0;
+            right:0;
+            top:25%;
+            margin-inline: auto;
+            padding: 3%;
+            color:blue;
+            z-index:10;
+            text-align: center;
+            visibility: hidden;
+            display: flex;
+            align-content: space-around;
+            flex-direction: column;
+           }
+    @media (min-width:680px) and (max-width:950px){
+       .drops{
+        width:50%
+       }
+    
+    
+    }
+    @media (min-width:550px) and (max-width:680px){
+       .drops{
+        width:50%;
+       }
+       .drop.drop-small{
+            height: 75px;
+            width: 75px;
+          
+       }
+       .text{
+          font-size: 25px;
+       }
+       .drop{
+        height:300px;
+        width:220px
+       }
+       .alarm{
+        height:300px;
+        width:200px
+       }
+    
+    }
+    @media (min-width:300px) and (max-width:551px){
+       .drops{
+        width:55%;
+       }
+       .drop.drop-small{
+            height: 65px;
+            width: 65px;
+            
+       }
+       .text{
+          font-size: 25px;
+       }
+       .drop{
+        height:300px;
+        width:200px
+       }
+       .alarm{
+        height:300px;
+        width:200px
+       }
+    }
+        
+    </style>
+</head>
+<body>
+    <div class="hov"  onclick="goal()">
+        <h2>Your daily water intake goal is:</h2>
+        <div class="round">
+            <p class="text"> </p>
+        </div>
+       </div>
+
+        <div class="setgoal" ondblclick="exit()">
+            <h3>you can set your goal:</h3>
+            <p class="p"> Select how many liters of water do you want to drink</p>
+               <input type="number" id="watergoal" placeholder="set your goal"  > 
+               <button type="submit" id="btns" > submit</button>       
+         </div>
+    </div>
+        <div class="alarm" onclick="exits()">
+        <h1 class="text"> Alarms: </h1>
+        <p class="status text" >  </p> 
+        </div> 
+          <nav>
+            <a href="./main.html" style="margin-left:10px">Home</a>
+            <p class="a" style="cursor: pointer;" onclick="opengoal()"> Intake goal</p>
+            <p class="a" style="cursor: pointer;" onclick="alarms()">Alarms</p>
+            <a href="./setting.html" style="margin-right:10px">Settings</a>
+
+          </nav>
+
+          <h1>Drink Water</h1>
+       
+
+          <div  class="drop">
+            <div class="remained" id="remained">
+                <span id="liters"> </span>
+                <span >Remained</span>
+            </div>
+        
+            <div class="percentage" id="percentage"></div>
+        </div>
+        <p class="text">Select how much water you just drank</p>
+        <div class="drops">
+            <div class="drop drop-small"> <small >250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+            <div class="drop drop-small"> <small>250 ml</small> </div>
+        </div>
+        <div>
+         
+        <div  class="hover" onclick="cmplgoal()">
+            <h1 class="h1"> Congratulations</h1>
+            <h2> Your daily goal is completed</h2>
+           
+        </div>
+
+        <script src="./main.js" defer> </script>
+
+
+   
+</body>
+</html>

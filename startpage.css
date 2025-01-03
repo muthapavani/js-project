@@ -1,0 +1,98 @@
+body{
+    background-image: url("./water.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:60px;
+    text-align: center;
+}
+#drop{
+    background-color: rgb(218, 228, 243);
+    border: 2px solid rgb(28, 180, 240);
+    height:300px;
+    width:300px;
+    margin:auto;
+    padding:0;
+    box-shadow: 0 12px 15px 0  rbga(0,0,0,0.44);
+    border-radius: 0% 50% 50% 50%;
+    transform: rotate(45deg);
+    position:relative;
+    top: 80px;
+    left:0px;
+    right:0px;
+    overflow: hidden;
+  
+}
+.h{
+    transform: rotate(-45deg);
+    font-size: 40px;
+    color:rgb(9, 75, 133);
+    padding: 10%;
+    text-shadow: 2px 2px 5px gray;
+}
+#drop:hover{
+    transform: rotate(45deg);
+    background-color: rgb(184, 205, 224);
+}
+.water{
+    font-size: 80px;
+}
+.h1{
+    color:white;
+    text-shadow: 2px 2px 5px rgb(9, 26, 63);
+    font-size: 40px;
+ 
+}
+
+.btn{
+    height:40px;
+    width:200px;
+    border-radius: 10px;
+    background-color: rgb(36, 163, 241);
+    color:white;
+    font-weight:bold;
+    font-size: 15px;
+    font-family: Roboto;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background-color:#5FA9BD
+}
+span{
+     color:rgb(9, 9, 160);
+     text-shadow: 3px 3px 8px rgb(54, 53, 53);
+     
+}
+.sp{
+     color:rgb(11, 94, 219);
+}
+
+
+
+@media (min-width: 300px) and (max-width: 576px) {
+
+    #drop{
+        height:230px;
+        width:230px;
+
+    }
+    .h{
+        font-size: 30px;
+    }
+    .h1{
+       
+        font-size: 30px;
+     
+    }
+    .water{
+        font-size: 50px;
+    }
+    .btn{
+        width:150px;
+        font-size: 15px;
+    }
+
+}
